@@ -1,0 +1,67 @@
+<app-header></app-header>
+
+<main class="main">
+  <section class="section">
+    <!-- Heading Section -->
+    <div class="heading-section">
+      <img
+        class="content-logo"
+        src="../../assets/Image/Logo.svg"
+        alt="content logo"
+      />
+      <h2 class="heading">Log in to your account</h2>
+      <p class="subheading">Welcome back! Please enter your details.</p>
+    </div>
+
+    <form class="form" id="login-form">
+      <!-- Iinput area of the login -->
+      <div class="input-container">
+        <label class="label" for="email">Email</label>
+        <input
+          class="input"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
+
+      <div class="input-container">
+        <label class="label" for="password">Password</label>
+        <input
+          class="input"
+          type="password"
+          name="password"
+          id="password"
+          placeholder="••••••••"
+          required
+        />
+      </div>
+
+      <div class="label forgot-password-checkbox-container">
+        <div class="checkbox-container">
+          <input class="checkbox" type="checkbox" />
+          <label for="">Remember for 30 days</label>
+        </div>
+        <a class="anchor-tag primary-anchor-tag" href="#">Forgot password </a>
+      </div>
+
+      <button class="signin-submit-btn btn btn-primary" type="submit">
+        Sign in
+      </button>
+    </form>
+
+    <a class="anchor-tag btn social-media-btn btn-outline" href="#"
+      ><img src="../../assets/Image/Social icon.svg" alt="google" /> Sign in
+      with Google
+    </a>
+
+    <div class="existing-account">
+      <p class="information-text">
+        Don’t have an account?
+        <a class="anchor-tag primary-anchor-tag" routerLink="signup">Sign up</a>
+      </p>
+    </div>
+  </section>
+</main>

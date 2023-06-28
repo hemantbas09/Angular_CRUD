@@ -1,0 +1,193 @@
+.profile-image-wrapper {
+  width: 40px;
+  height: 40px;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 200px;
+}
+
+.table {
+  background: #ffffff;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 12px;
+}
+
+.table-heading {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #667085;
+}
+
+.progressive-bar {
+  background: #f2f4f7;
+  width: 69px;
+  height: 8px;
+  border-radius: 25px;
+  background: #7f56d9;
+}
+
+.progressive-bar > span {
+  width: 69px;
+  height: 8px;
+  border-radius: 25px;
+}
+
+tbody > tr:nth-child(2n + 1) {
+  background: #f9fafb;
+}
+
+.table-titlebox {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.thead-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.table-title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #101828;
+}
+
+.company-about {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #667085;
+}
+
+.company-info {
+  color: #101828;
+}
+
+.status {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: #027a48;
+  background: #ecfdf3;
+  border-radius: 16px;
+  padding: 2px 8px;
+}
+
+.about-compeny {
+  color: #101828;
+}
+
+th {
+  padding: 13px 24px 13px 50px;
+  text-align: left;
+  border-bottom: 1px solid #eaecf0;
+}
+
+td {
+  padding: 25px 0px 25px 50px;
+  border-bottom: 1px solid #eaecf0;
+}
+
+.table-chechkbox {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  position: relative;
+}
+
+.thead-checkbox:checked::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(../../../assets/userAvatar/checked.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.tbody-checkbox:checked::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url(../../../assets/userAvatar/unchecked.svg) no-repeat center /
+    contain;
+}
+
+.table-chechkbox:checked {
+  border: 2px solid purple;
+}
+
+.table-act-btn {
+  display: flex;
+  gap: 29px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.avatars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  background: #f9f5ff;
+  border-radius: 200px;
+  text-align: center;
+  margin-left: -10px;
+  border: 1.5px solid #ffffff;
+}
+
+.img-avatar {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 200px;
+}
+
+.avatar-number {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #7f56d9;
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 50px 16px 50px;
+}
+
+.pagination-btn {
+  display: flex;
+  gap: 12px;
+}
+
+.pagination-page {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #344054;
+}

@@ -1,0 +1,123 @@
+<app-sidebar></app-sidebar>
+
+<main class="dashboard-main" id="dashboard">
+  <div class="dashboard-heading-container">
+    <div class="dashboard-heading">
+      <h1 class="dashboard-heading-title">Welcome back, Olivia</h1>
+      <p class="dashboard-sub-heading">
+        Track, manage and forecast your customers and orders.
+      </p>
+    </div>
+
+    <div class="dashboard-cta-button">
+      <button class="btn btn-icon btn-outline">
+        <img src="../../assets/Image/upload-icon.svg" alt="upload-icon" />
+        Import
+      </button>
+      <a href="./Form.html" class="btn btn-icon btn-primary">
+        <img src="../../assets/Image/add-icon.svg" alt="add-icon" />
+        Add
+      </a>
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-heading">Total customers</h2>
+        <button class="nostyle-btn">
+          <img src="../../assets/Image/dot-icon.svg" alt="dot-icon" />
+        </button>
+      </div>
+
+      <div class="card-body">
+        <div class="number-badge">
+          <h3 class="card-text" id="total-user"></h3>
+          <p class="card-message">
+            <img src="../../assets/Image/up-arrow.svg" alt="arrow-icon" />
+            <span class="success"> 40% </span> vs last month
+          </p>
+        </div>
+
+        <img src="../../assets/Image/up-line.svg" alt="graph" />
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-heading">Members</h2>
+        <button class="nostyle-btn">
+          <img src="../../assets/Image/dot-icon.svg" alt="dot-icon" />
+        </button>
+      </div>
+
+      <div class="card-body">
+        <div class="number-badge">
+          <h3 class="card-text">1,210</h3>
+          <p class="card-message">
+            <img src="../../assets/Image/down-arrow.svg" alt="arrow-icon" />
+            <span class="error"> 10% </span> vs last month
+          </p>
+        </div>
+
+        <img src="../../assets/Image/down-line.svg" alt="graph" />
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-heading">Active now</h2>
+        <button class="nostyle-btn">
+          <img src="../../assets/Image/dot-icon.svg" alt="dot-icon" />
+        </button>
+      </div>
+
+      <div class="card-body">
+        <div class="number-badge">
+          <h3 class="card-text">316</h3>
+          <p class="card-message">
+            <img src="../../assets/Image/up-arrow.svg" alt="arrow-icon" />
+            <span class="success"> 20% </span> vs last month
+          </p>
+        </div>
+
+        <img src="../../assets/Image/up-line.svg" alt="graph" />
+      </div>
+    </div>
+  </div>
+
+  <div class="searchfilter-wrapper">
+    <form action="" class="search-container">
+      <img class="search-icon" src="../../assets/Image/search.svg" alt="" />
+      <input
+        class="input search"
+        type="text"
+        placeholder="Search"
+        id="search"
+      />
+    </form>
+    <div class="filter-container">
+      <button class="btn btn-icon btn-outline full-btn">
+        <img src="../../assets/Image/filtericon.svg" alt="" />
+        Edit filters
+      </button>
+
+      <div class="filter-group">
+        <p class="filter-item">
+          All time
+          <button class="nostyle-btn">
+            <img src="../../assets/Image/cross-ison.svg" alt="cross-icon" />
+          </button>
+        </p>
+        <p class="filter-item">
+          US,AU,+4
+          <button class="nostyle-btn">
+            <img src="../../assets/Image/cross-ison.svg" alt="cross-icon" />
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <app-table></app-table>
+</main>

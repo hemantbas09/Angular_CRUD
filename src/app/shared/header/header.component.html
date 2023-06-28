@@ -1,0 +1,77 @@
+<header class="header-content">
+  <section class="header-section">
+    <nav class="navbar">
+      <!-- logo -->
+      <a class="logo-container" routerLink="">
+        <div class="logo-wrap">
+          <img class="logo" src="../../assets/Image/Logo.svg" alt="Logo" />
+        </div>
+        <div class="logo-text-wrap">
+          <img
+            class="logo-text"
+            src="../../assets/Image/logo-text.svg "
+            alt="Untitled UI"
+          />
+        </div>
+      </a>
+      <!-- nav menu -->
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a class="anchor-tag" routerLink="#">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="anchor-tag" href="#" id="product-dropdown">
+            Product
+            <img
+              class="dropdown-icon"
+              src="../../assets/Image/dropdownicon.svg"
+              alt="Dropdown Icon"
+            />
+          </a>
+          <ul class="dropdown-container" id="dropdown-container">
+            <li class="dropdown-menu">
+              <a class="anchor-tag" href="#">Cricket</a>
+            </li>
+            <li class="dropdown-menu">
+              <a class="anchor-tag" href="#">Football</a>
+            </li>
+            <li class="dropdown-menu">
+              <a class="anchor-tag" href="#">Hockey</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="anchor-tag" href="#"
+            >Resources
+            <img
+              class="dropdown-icon"
+              src="../../assets/Image/dropdownicon.svg"
+              alt="Dropdown Icon"
+            />
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="anchor-tag" href="#">Pricing</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- hambergur button -->
+    <button class="nostyle-btn" aria-label="Menu">
+      <img
+        class="hamburger-icon"
+        src="../../assets/Image/hamburgerIcon.svg"
+        alt="Hamburger Icon"
+      />
+    </button>
+
+    <!-- call to action button -->
+    <div class="cta-buttons">
+      <a class="anchor-tag" routerLink="">Login</a>
+      <a class="anchor-tag btn btn-primary" routerLink="signup">Signup</a>
+    </div>
+  </section>
+</header>

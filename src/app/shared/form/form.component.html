@@ -1,0 +1,377 @@
+
+<div class="dashboard-heading">
+  <h1 class="dashboard-heading-title setting-heading">Settings</h1>
+
+  <!-- Setting nav for mobile-->
+
+  <div class="select">
+    <ul class="default-option">
+      <div class="icon">
+        <img src="../../assets/Image/dropdownicon.svg" alt="" />
+      </div>
+      <li class="select-option">
+        <a class="label" href="#"> My details </a>
+      </li>
+    </ul>
+    <ul class="select-ul">
+      <li class="select-option">
+        <a class="label" href="#"> Profile </a>
+      </li>
+
+      <li class="select-option">
+        <a class="label" href="#"> Password </a>
+      </li>
+
+      <li class="select-option">
+        <a class="label" href="#"> Team </a>
+      </li>
+
+      <li class="select-option">
+        <a class="label" href="#"> Plan </a>
+      </li>
+
+      <li class="select-option">
+        <a class="label" href="#"> Billing </a>
+      </li>
+
+      <li class="select-option">
+        <a class="label" href="#"> Email </a>
+      </li>
+
+      <li class="select-option">
+        <a class="label" href="#"> Notification </a>
+      </li>
+
+      <li class="select-option">
+        <a class="label" href="#"> Integrations </a>
+      </li>
+
+      <li class="select-option">
+        <a class="label" href="#"> API </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Setting nav for big screen -->
+
+  <div>
+    <ul class="setting-navmenu navbar">
+      <li class="setting-navitem">
+        <a class="label" href="#"> My details </a>
+      </li>
+
+      <li class="setting-navitem">
+        <a class="label" href="#"> Profile </a>
+      </li>
+
+      <li class="setting-navitem">
+        <a class="label" href="#"> Password </a>
+      </li>
+
+      <li class="setting-navitem">
+        <a class="label" href="#"> Team </a>
+        <span class="check">4</span>
+      </li>
+
+      <li class="setting-navitem">
+        <a class="label" href="#"> Plan </a>
+      </li>
+
+      <li class="setting-navitem">
+        <a class="label" href="#"> Billing </a>
+        <span class="check">4</span>
+      </li>
+
+      <li class="setting-navitem">
+        <a class="label" href="#"> Email </a>
+      </li>
+
+      <li class="setting-navitem">
+        <a class="label" href="#"> Notification </a>
+      </li>
+
+      <li class="setting-navitem">
+        <a class="label" href="#"> Integrations </a>
+      </li>
+
+      <li class="setting-navitem">
+        <a class="label" href="#"> API </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="setting-info">
+    <h2 class="heading">Personal Info</h2>
+    <p class="text-standard">Update your photo and personal details here.</p>
+  </div>
+
+  <form action="" id="form">
+    <div>
+      <div class="input-container setting-input-container">
+        <label class="label setting-label" for="name" id="lg-screen-name"
+          >Name</label
+        >
+        <div class="input-container-content setting-fullName mobile-name">
+          <label class="label setting-label" for="last-name" id="mobile-label"
+            >First Name</label
+          >
+
+          <input
+            class="input secondary-input input-width-fixed"
+            type="text"
+            id="first-name"
+            name="first-name"
+            placeholder="First Name"
+            required
+          />
+
+          <label class="label setting-label" for="last-name" id="mobile-label"
+            >Last Name</label
+          >
+          <input
+            class="input secondary-input input-width-fixed"
+            type="text"
+            id="last-name"
+            name="last-name"
+            placeholder="Last Name"
+            required
+          />
+        </div>
+        <span class="label setting-label" id="validation-message"
+          >Please enter only alphabetic characters. Numbers are not
+          allowed</span
+        >
+      </div>
+
+      <div class="input-container setting-input-container">
+        <label class="label setting-label" for="email">Email address</label>
+        <div class="input-container-content">
+          <img
+            class="search-icon"
+            src="../../assets/Form/email.svg"
+            alt="email-icon"
+          />
+          <input
+            class="input search secondary-input"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="olivia@untitledui.com"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="input-container setting-input-container">
+        <div class="upload-file-heading setting-label">
+          <h2 class="label">Your photo</h2>
+          <p class="text-standard">This will be displayed on your profile.</p>
+        </div>
+
+        <div class="input-container-content">
+          <div class="formimage-container">
+            <img
+              id="profile-imageElement"
+              src="../../assets/SidebarIcon/profile-picture.jpg"
+              alt=""
+            />
+          </div>
+          <div class="file-container">
+            <label class="file-content" for="profile-picture">
+              <img
+                class="file-icon"
+                src="../../assets/Form/upload.svg"
+                alt="file-icon"
+              />
+              <div class="text-standard">
+                <p>
+                  <span class="anchor-tag primary-anchor-tag">
+                    Click to upload
+                  </span>
+                  or drag and drop
+                </p>
+                <p>SVG, PNG, JPG or GIF (max. 800x400px)</p>
+              </div>
+            </label>
+
+            <input
+              class="input search secondary-input file"
+              type="file"
+              id="profile-picture"
+              name="file"
+              required
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="input-container setting-input-container">
+        <label class="label setting-label" for="role">Role</label>
+        <input
+          class="input secondary-input input-container-content"
+          type="text"
+          placeholder="Product Designer"
+          id="role"
+        />
+        <span class="label setting-label" id="role-validation-message"
+          >Please enter only alphabetic characters. Numbers are not
+          allowed</span
+        >
+      </div>
+
+      <div class="input-container setting-input-container">
+        <label class="label setting-label" for="country">Country</label>
+
+        <div class="select-dropdown-container input-container-content">
+          <div class="select-dropdown">
+            <img src="../../assets/Form/select-dropdown.svg" alt="" />
+          </div>
+          <select
+            class="input setting-input"
+            name="country"
+            id="country"
+            required
+          >
+            <option value="Nepal" selected>Nepal</option>
+            <option value="India">India</option>
+            <option value="Pakistan">Pakistan</option>
+            <option value="Srilanka">Srilanka</option>
+            <option value="China">China</option>
+            <option value="England">England</option>
+            <option value="Spain">Spain</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="input-container setting-input-container">
+        <label class="label setting-label" for="timzone">Timezone</label>
+        <div class="select-dropdown-container input-container-content">
+          <div class="select-dropdown">
+            <img src="../Form/select-dropdown.svg" alt="" />
+          </div>
+          <select
+            class="input setting-input"
+            name="timezone"
+            id="timezone"
+            required
+          >
+            <option value="UTC-08:00">UTC-08:00</option>
+            <option value="America/Los_Angeles">
+              Pacific Time (US & Canada)
+            </option>
+            <option value="America/Tijuana">Tijuana, Baja California</option>
+            <option value="America/Dawson">Dawson</option>
+            <option value="America/Phoenix">Arizona</option>
+            <option value="America/Whitehorse">Whitehorse</option>
+            <option value="America/Inuvik">Inuvik</option>
+            <option value="America/Boise">Mountain Time (US & Canada)</option>
+            <option value="America/Edmonton">Edmonton</option>
+            <option value="America/Yellowknife">Yellowknife</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="input-container setting-input-container">
+        <div class="setting-label">
+          <h2 class="label">Bio</h2>
+          <p class="text-standard">Write a short introduction.</p>
+        </div>
+
+        <div class="input-container-content">
+          <div class="text-formatting-wrapper">
+            <div class="input-container">
+              <div class="select-dropdown-container input-container-content">
+                <div class="select-dropdown">
+                  <img src="../../assets/Form/select-dropdown.svg" alt="" />
+                </div>
+                <select
+                  class="input setting-input text-type"
+                  name="text-type"
+                  id="text-type"
+                >
+                  <option value="normaltext" selected>Normal Text</option>
+                  <option value="bold">Bold</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="text-area-icon">
+              <a id="font-bold" class="">
+                <img src="../../assets/Form/bold.svg" alt="fontbold-icon" />
+              </a>
+
+              <a id="font-italic">
+                <img src="../../assets/Form/italic.svg" alt="" />
+              </a>
+
+              <a>
+                <img src="../../assets/Form/save.svg" alt="" />
+              </a>
+
+              <a id="text-unorderlist">
+                <img src="../Form/unorder-list.svg" alt="" />
+              </a>
+
+              <a id="text-orderlist">
+                <img src="../../assets/Form/oder-list.svg" alt="" />
+              </a>
+            </div>
+          </div>
+          <div id="textarea-container">
+            <textarea
+              class="input setting-input text-area setting-textarea"
+              name="textarea"
+              id="textarea"
+              cols="10"
+              rows="5"
+              maxlength="274"
+              required
+            ></textarea>
+            <p class="text text-area-font">
+              <span id="text-count">275</span> characters left
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-container setting-input-container">
+        <div class="project-upload-container setting-label">
+          <h2 class="label">Portfolio projects</h2>
+          <p class="text-standard">Share a few snippets of your work.</p>
+        </div>
+        <div class="file-container input-container-content">
+          <label class="file-content" for="project-file">
+            <img
+              class="file-icon"
+              src="../../assets/Form/upload.svg"
+              alt="file-icon"
+            />
+            <div class="text-standard">
+              <p>
+                <span class="anchor-tag primary-anchor-tag">
+                  Click to upload
+                </span>
+                or drag and drop
+              </p>
+              <p>SVG, PNG, JPG or GIF (max. 800x400px)</p>
+            </div>
+          </label>
+
+          <input
+            class="input search secondary-input file"
+            type="file"
+            id="project-file"
+            name="project-file"
+            required
+          />
+        </div>
+      </div>
+      <div class="formcta-button">
+        <button type="button" class="btn btn-outline">Cancel</button>
+        <button id="create-data" type="submit" class="btn btn-primary">
+          Save
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
