@@ -1,16 +1,25 @@
 <app-header></app-header>
 
-
 <main class="main">
   <section class="section">
     <!-- Heading section  -->
     <div class="heading-section signup-heading-section">
-      <img class="content-logo" src="../../assets/Image/Logo.svg" alt="content logo" />
+      <img
+        class="content-logo"
+        src="../../assets/Image/Logo.svg"
+        alt="content logo"
+      />
       <h2 class="heading">Create an account</h2>
       <p class="subheading">Start your 30-day free trial</p>
     </div>
 
-    <form class="form" id="signup-form">
+    <form
+      class="form"
+      id="signup-form"
+      [formGroup]="form"
+      (submit)="onSubmit()"
+    >
+      <!-- Full Name -->
       <div class="input-container">
         <label class="label" for="full-name">Name*</label>
         <input
@@ -19,11 +28,16 @@
           name="full-name"
           id="full-name"
           placeholder="Enter your name"
-          pattern="[A-Za-z]+"
-          required
+          formControlName="fullName"
         />
+
+        <app-validation
+          [formValidation]="form.get('fullName')"
+          [validationMessage]="'Full Name'"
+        ></app-validation>
       </div>
 
+      <!-- Email -->
       <div class="input-container">
         <label class="label" for="email">Email*</label>
         <input
@@ -32,10 +46,16 @@
           name="email"
           id="email"
           placeholder="Enter your email"
-          required
+          formControlName="email"
         />
+
+        <app-validation
+          [formValidation]="form.get('email')"
+          [validationMessage]="'Email'"
+        ></app-validation>
       </div>
 
+      <!-- Password -->
       <div class="input-container">
         <label class="label" for="password">Password*</label>
         <input
@@ -44,11 +64,17 @@
           name="password"
           id="password"
           placeholder="••••••••"
-          required
+          formControlName="password"
+          autocomplete="new-password"
         />
-        <p class="information-text" id="password-length"></p>
+
+        <app-validation
+          [formValidation]="form.get('password')"
+          [validationMessage]="'Password'"
+        ></app-validation>
       </div>
 
+      <!-- Confirm Password -->
       <div class="input-container">
         <label class="label" for="confirm-password">Confirm Password*</label>
         <input
@@ -57,42 +83,89 @@
           name="confirm-password"
           id="confirm-password"
           placeholder="••••••••"
-          required
+          formControlName="confirmPassword"
+          autocomplete="new-password"
         />
+
+        <app-validation
+          [formValidation]="form.get('confirmPassword')"
+          [validationMessage]="'Confirm Password'"
+        ></app-validation>
+
+        <div
+          class="label error-label"
+          *ngIf="(form.get('confirmPassword')?.touched && form.errors?.['passwordMatch'] === false)"
+        >
+          Password and Confirmation Password did not match
+        </div>
       </div>
 
+      <!-- Date of Birth -->
       <div class="input-container">
         <label class="label" for="date-of-birth">Date of Birth*</label>
         <input
           class="input"
-          type="Date"
+          type="date"
           name="date-of-birth"
           id="date-of-birth"
+          formControlName="dateOfBirth"
         />
+
+        <app-validation
+          [formValidation]="form.get('dateOfBirth')"
+          [validationMessage]="'Date of Birth'"
+        ></app-validation>
       </div>
 
+      <!-- Gender -->
       <div class="input-container">
-        <label class="label" for="male">Gender*</label>
+        <label class="label" for="gender">Gender*</label>
         <fieldset class="input form-field-group" id="gender">
           <div>
-            <input type="radio" name="gender" id="male" value="male" />
+            <input
+              type="radio"
+              id="male"
+              value="male"
+              formControlName="selectedGender"
+            />
             <label for="male">Male</label>
           </div>
           <div>
-            <input type="radio" name="gender" id="female" value="female" />
+            <input
+              type="radio"
+              id="female"
+              value="female"
+              formControlName="selectedGender"
+            />
             <label for="female">Female</label>
           </div>
           <div>
-            <input type="radio" name="gender" id="other" value="other" />
+            <input
+              type="radio"
+              id="other"
+              value="other"
+              formControlName="selectedGender"
+            />
             <label for="other">Other</label>
           </div>
         </fieldset>
+
+        <app-validation
+          [formValidation]="form.get('selectedGender')"
+          [validationMessage]="'Gender'"
+        ></app-validation>
       </div>
 
+      <!-- City -->
       <div class="input-container">
         <label for="city-select" class="label">Select a City*</label>
-        <select id="city-select" class="input select">
-          <option value="kathmandu" selected>Kathmandu</option>
+        <select
+          id="city-select"
+          class="input select"
+          formControlName="selectedCity"
+        >
+          <option value="" selected>Select Your City</option>
+          <option value="kathmandu">Kathmandu</option>
           <option value="pokhara">Pokhara</option>
           <option value="biratnagar">Biratnagar</option>
           <option value="dharan">Dharan</option>
@@ -103,8 +176,14 @@
           <option value="itahari">Itahari</option>
           <option value="janakpur">Janakpur</option>
         </select>
+
+        <app-validation
+          [formValidation]="form.get('selectedCity')"
+          [validationMessage]="'City'"
+        ></app-validation>
       </div>
 
+      <!-- Description -->
       <div class="input-container">
         <label for="description" class="label">Description*</label>
         <textarea
@@ -114,15 +193,24 @@
           cols="30"
           rows="5"
           placeholder="Describe Yourself"
+          formControlName="description"
         ></textarea>
+
+        <app-validation
+          [formValidation]="form.get('description')"
+          [validationMessage]="'Bio'"
+        ></app-validation>
       </div>
 
+      <!-- Submit Button -->
       <button class="btn btn-primary" type="submit">Create account</button>
     </form>
 
     <a class="anchor-tag btn social-media-btn btn-outline" href="#"
-      ><img src="../../assets/Image/Social icon.svg" alt="google" /> Sign up with Google
-    </a>
+      ><img src="../../assets/Image/Social icon.svg" alt="google" /> Sign up
+      with Google</a
+    >
+
     <div class="existing-account">
       <p class="information-text">
         Already have an account?

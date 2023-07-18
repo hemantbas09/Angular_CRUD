@@ -176,6 +176,10 @@ li {
   color: var(--darkgray);
   margin-bottom: 6px;
 }
+.error-label {
+  color: red;
+  white-space: pre-line;
+}
 
 .input {
   padding: 10px 14px;

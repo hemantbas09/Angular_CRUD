@@ -1,5 +1,3 @@
-
-
 <div>
   <table class="table">
     <thead>
@@ -18,7 +16,7 @@
       </tr>
     </thead>
     <tbody id="tablebody">
-      <tr>
+      <tr *ngFor="let user of existingProfileData">
         <td class="table-col">
           <div class="table-titlebox">
             <input class="table-chechkbox thead-checkbox" type="checkbox" />
@@ -30,8 +28,10 @@
               />
             </div>
             <div>
-              <h2 class="table-title">tyu</h2>
-              <h3 id="checkmate" class="company-about">yu</h3>
+              <h2 class="table-title">
+                {{ user.firstName + " " + user.lastName }}
+              </h2>
+              <h3 id="checkmate" class="company-about">{{ user.email }}</h3>
             </div>
           </div>
         </td>
@@ -41,7 +41,7 @@
           </div>
         </td>
         <td>
-          <p class="status">t67</p>
+          <p class="status">{{ user.role }}</p>
         </td>
         <td class="table-col">
           <div class="avatars">
@@ -79,20 +79,20 @@
           </div>
         </td>
         <td>
-          <p class="company-about company-info">rty</p>
+          <p class="company-about company-info">{{ user.country }}</p>
         </td>
         <td>
-          <p class="company-about company-info">hty</p>
+          <p class="company-about company-info">{{ user.timeZone }}</p>
         </td>
         <td>
-          <p class="company-about company-info">tyu</p>
+          <p class="company-about company-info">{{ user.bio }}</p>
         </td>
         <td class="table-col">
           <div class="table-act-btn">
-            <button class="nostyle-btn">
+            <button class="nostyle-btn" (click)="deleteData(user.id)">
               <img src="../../assets/Image/delete-icon.svg" alt="delete-icon" />
             </button>
-            <a href="#">
+            <a [routerLink]="'/profile/' + user.id">
               <img src="../../assets/Image/edit-icon.svg" alt="edit-icon" />
             </a>
           </div>

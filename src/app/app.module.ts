@@ -12,7 +12,10 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
-
+import { ButtonComponent } from './shared/button/button.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ValidationComponent } from './shared/validation/validation.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,13 +27,12 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
     LoginComponent,
     SignupComponent,
     ProfileComponent,
-    EditprofileComponent
+    EditprofileComponent,
+    ButtonComponent,
+    ValidationComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule,HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
