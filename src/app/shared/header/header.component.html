@@ -13,7 +13,7 @@
       </div>
     </a>
 
-    <nav class="navbar">
+    <nav class="navbar" [ngClass]="{ active: isMenuOpen }">
       <ul class="nav-menu">
         <ng-container *ngFor="let menuItem of menuItems">
           <li class="nav-item" [ngClass]="{ dropdown: menuItem.submenuItems }">
@@ -54,10 +54,9 @@
         >
       </div>
     </nav>
-    
   </section>
 
-  <button class="nostyle-btn" aria-label="Menu">
+  <button class="nostyle-btn" aria-label="Menu" (click)="toggleMenu()">
     <img
       class="hamburger-icon"
       src="../../assets/Image/hamburgerIcon.svg"

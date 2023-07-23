@@ -63,4 +63,11 @@ export class HeaderComponent {
       this.closeAllDropdowns();
     }
   }
+
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+    console.log(this.isMenuOpen);
+  }
 }

@@ -1,33 +1,53 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
   "userProfile": [
+    {
+      "lastName": "Basnet",
+      "firstName": "Bimal",
+      "email": "hemantbasnet61@gmail.com",
+      "profilePicture": {},
+      "role": "Backend Developer",
+      "country": "Nepal",
+      "timeZone": "America/Los_Angeles",
+      "bio": "ddddddd",
+      "project": {},
+      "id": 4
+    },
+    {
+      "lastName": "Basnet",
+      "firstName": "Bimal",
+      "email": "hemantbasnet61@gmail.com",
+      "profilePicture": {},
+      "role": "Frontend Developer",
+      "country": "Nepal",
+      "timeZone": "America/Los_Angeles",
+      "bio": "ddddddd",
+      "project": {},
+      "id": 5
+    },
+    {
+      "lastName": "Basnet",
+      "firstName": "Bandana",
+      "email": "hemantbasnet61@gmail.com",
+      "profilePicture": {},
+      "role": "Frontend Developer",
+      "country": "Nepal",
+      "timeZone": "America/Los_Angeles",
+      "bio": "ddddddd",
+      "project": {},
+      "id": 6
+    },
     {
       "lastName": "Basnet",
       "firstName": "Hemant",
       "email": "hemantbasnet61@gmail.com",
       "profilePicture": "",
-      "role": "",
-      "country": "",
-      "timeZone": "",
-      "bio": "",
-      "project": "",
-      "id": 3
+      "role": "Frontend Developer",
+      "country": "India",
+      "timeZone": "America/Los_Angeles",
+      "bio": "ss",
+      "project": {},
+      "id": 7
     }
-  ]
+  ],
+  "customerData": []
 }

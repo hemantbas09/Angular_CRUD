@@ -1,4 +1,40 @@
 <div>
+  <div class="searchfilter-wrapper">
+    <form action="" class="search-container" [formGroup]="searchForm">
+      <img class="search-icon" src="../../assets/Image/search.svg" alt="" />
+
+      <input
+        class="input search"
+        type="text"
+        placeholder="Search"
+        name="searchText"
+        formControlName="searchText"
+        #searchInput
+        (input)="searchUser(searchInput.value)"
+      />
+    </form>
+    <div class="filter-container">
+      <button class="btn btn-icon btn-outline full-btn">
+        <img src="../../assets/Image/filtericon.svg" alt="" />
+        Edit filters
+      </button>
+
+      <div class="filter-group">
+        <p class="filter-item">
+          All time
+          <button class="nostyle-btn">
+            <img src="../../assets/Image/cross-ison.svg" alt="cross-icon" />
+          </button>
+        </p>
+        <p class="filter-item">
+          US,AU,+4
+          <button class="nostyle-btn">
+            <img src="../../assets/Image/cross-ison.svg" alt="cross-icon" />
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
   <table class="table">
     <thead>
       <tr class="table-heading">

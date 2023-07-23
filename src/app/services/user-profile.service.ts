@@ -19,6 +19,9 @@ export class UserProfileService {
   getUserProfileById(id: number): Observable<any> {
     return this._http.get(`http://localhost:3000/userProfile/${id}`);
   }
+  updateUserProfile(id: number, updatedData: any): Observable<any> {
+    return this._http.put(`http://localhost:3000/userProfile/${id}`, updatedData);
+  }
 
   deleteUserProfile(id: number): Observable<any> {
     return this._http.delete(`http://localhost:3000/userProfile/${id}`);
