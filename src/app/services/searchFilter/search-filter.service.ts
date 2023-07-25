@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 export class SearchFilterService {
   constructor(private userProfileService: UserProfileService) {}
 
-  searchUser(searchQuery: string): Observable<any> {
+  searchUser(searchQuery: string) {
     return this.userProfileService
       .getUserProfile()
       .pipe(
@@ -23,7 +23,6 @@ export class SearchFilterService {
 
   profileIncludesLetter(profile: any, searchQuery: string): boolean {
     const letterToSearch = searchQuery.toLowerCase();
-
     const lowercaseProfile =
       profile.firstName.toLowerCase() +
       profile.lastName.toLowerCase() +

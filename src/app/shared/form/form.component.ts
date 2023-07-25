@@ -25,7 +25,7 @@ export class FormComponent implements OnInit {
   isAddMode!: boolean;
   form: FormGroup;
   profileDataArray: UserProfileInformation[] = [];
-
+  imageURL: any = '../../assets/SidebarIcon/profile-picture.jpg';
   constructor(
     private fb: FormBuilder,
     private userProfileService: UserProfileService,
@@ -59,13 +59,28 @@ export class FormComponent implements OnInit {
   }
 
   onFileInput(event: any, controlName: string) {
-    const file = event.target.files[0];
-    this.form.patchValue({
-      [controlName]: file,
-    });
+    // Access the Selected Files:
+    let selectedImage = event.target.files[0];
+
+    // Create a instance of the FileReader:
+    let reader = new FileReader();
+
+    // Read the selected file as a data URL---> readAsDataURL represent the file data as base64 encoded string:
+    reader.readAsDataURL(selectedImage);
+
+    // create the reader callback function:
+    reader.onload = () => {
+      // Update the source of the image:
+      this.imageURL = reader.result;
+
+      this.form.patchValue({
+        [controlName]: this.imageURL,
+      });
+    };
   }
 
   onSubmit() {
+    console.log(this.form.value);
     if (!this.isAddMode) {
       this.userProfileService
         .updateUserProfile(this.id, this.form.value)
@@ -88,7 +103,4 @@ export class FormComponent implements OnInit {
       });
     }
   }
-
- 
-  
 }

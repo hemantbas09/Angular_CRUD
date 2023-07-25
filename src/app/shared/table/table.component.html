@@ -1,6 +1,6 @@
 <div>
   <div class="searchfilter-wrapper">
-    <form action="" class="search-container" [formGroup]="searchForm">
+    <form action="" class="search-container">
       <img class="search-icon" src="../../assets/Image/search.svg" alt="" />
 
       <input
@@ -8,9 +8,8 @@
         type="text"
         placeholder="Search"
         name="searchText"
-        formControlName="searchText"
-        #searchInput
-        (input)="searchUser(searchInput.value)"
+        [(ngModel)]="searchTerm"
+        (input)="onSearch()"
       />
     </form>
     <div class="filter-container">
@@ -52,7 +51,7 @@
       </tr>
     </thead>
     <tbody id="tablebody">
-      <tr *ngFor="let user of existingProfileData">
+      <tr *ngFor="let user of  paginatedUsers">
         <td class="table-col">
           <div class="table-titlebox">
             <input class="table-chechkbox thead-checkbox" type="checkbox" />
@@ -138,11 +137,23 @@
   </table>
   <div class="pagination">
     <div class="pagination-btn">
-      <button class="btn btn-outline" id="previous-btn">Previous</button>
-      <button class="btn btn-outline" id="next-btn">Next</button>
+      <button
+        class="btn btn-outline"
+        (click)="setPage(getCurrentPage() - 1)"
+        [disabled]="getCurrentPage() === 1"
+      >
+        Previous
+      </button>
+      <button
+        class="btn btn-outline"
+        (click)="setPage(getCurrentPage() + 1)"
+        [disabled]="getCurrentPage() === getTotalPages()"
+      >
+        Next
+      </button>
     </div>
     <p class="pagination-page">
-      Page <span id="current-page">1</span> of <span id="total-page">1</span>
+      Page <span id="current-page">{{getCurrentPage()}}</span> of <span id="total-page">{{getTotalPages()}}</span>
     </p>
   </div>
 </div>

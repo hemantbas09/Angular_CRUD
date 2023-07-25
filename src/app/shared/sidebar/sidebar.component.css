@@ -1,5 +1,17 @@
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 16px 18px 16px;
+  border-bottom: 1px solid #ffffff;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .sidebar {
-  /* display: none; */
+  display: none;
   position: absolute;
   background-color: white;
   padding: 0px 24px 0px 24px;
@@ -11,7 +23,9 @@
   max-width: 312px;
   overflow-y: auto;
 }
-
+.sidebar.active{
+  display: block;
+}
 .sidebar-section {
   max-width: 312px;
   overflow: hidden;
@@ -167,4 +181,13 @@
 
 .logout-btn {
   align-self: flex-start;
+}
+
+@media only screen and (min-width: 1024px) {
+  .header-section {
+    display: none;
+  }
+  .sidebar {
+    display: block;
+  }
 }

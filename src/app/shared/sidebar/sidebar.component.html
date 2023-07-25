@@ -1,11 +1,36 @@
+<!-- Mobile-->
+<header class="header-section" *ngIf="!isMenuOpen">
+  <button class="nostyle-btn" aria-label="Menu" (click)="toggleMenu()">
+    <img
+      class="hamburger-icon"
+      src="../../assets/Image/hamburgerIcon.svg"
+      alt="Hamburger Icon"
+    />
+  </button>
+
+  <a class="logo-container" href="signup.html">
+    <div class="logo-wrap">
+      <img class="logo" src="../../assets/Image/Logo.svg" alt="Logo" />
+    </div>
+    <div class="logo-text-wrap">
+      <img
+        class="logo-text"
+        src="../../assets/Image/logo-text.svg"
+        alt="Untitled UI"
+      />
+    </div>
+  </a>
+</header>
+
 <section class="sidebar-section">
-  <aside class="sidebar" id="sidebar">
+  <aside class="sidebar" [ngClass]="{ active: isMenuOpen }">
     <div class="sidebar-heading">
       <button class="nostyle-btn" aria-label="Menu" id="close-nav">
         <img
           class="hamburger-icon"
           src="../../assets/Image/hamburgerIcon.svg"
           alt="Hamburger Icon"
+          (click)="toggleMenu()"
         />
       </button>
       <a class="logo-container sidebar-logo" href="signup.html">
@@ -21,6 +46,7 @@
         </div>
       </a>
     </div>
+
     <div class="sidebar-top">
       <form action="" class="search-container sidebar-search">
         <img
@@ -33,7 +59,7 @@
 
       <ul class="side-menu">
         <li>
-          <a class="sidemenu-item" href="#">
+          <a class="sidemenu-item">
             <div class="sidemenu-content">
               <img
                 src="../../assets/SidebarIcon/home-icon.svg"
@@ -46,7 +72,7 @@
         </li>
 
         <li>
-          <a class="sidemenu-item" href="./dashboard.html">
+          <a class="sidemenu-item" routerLink="dashboard">
             <div class="sidemenu-content">
               <img src="../../assets/SidebarIcon/dashboard-icon.svg" alt="" />
               <p>Dashboard</p>
@@ -56,7 +82,7 @@
         </li>
 
         <li>
-          <a class="sidemenu-item" href="#">
+          <a class="sidemenu-item">
             <div class="sidemenu-content">
               <img src="../../assets/SidebarIcon/project-icon.svg" alt="" />
               <p>Projects</p>
@@ -66,7 +92,7 @@
         </li>
 
         <li>
-          <a class="sidemenu-item" href="#">
+          <a class="sidemenu-item">
             <div class="sidemenu-content">
               <img
                 class="sidemenu-icon"
@@ -80,7 +106,7 @@
         </li>
 
         <li>
-          <a class="sidemenu-item" href="#">
+          <a class="sidemenu-item">
             <div class="sidemenu-content">
               <img src="../../assets/SidebarIcon/reporting-icon.svg" alt="" />
 
@@ -91,7 +117,7 @@
         </li>
 
         <li>
-          <a class="sidemenu-item" href="#">
+          <a class="sidemenu-item">
             <div class="sidemenu-content">
               <img src="../../assets/SidebarIcon/user-icon.svg" alt="" />
               <p>Users</p>
@@ -103,7 +129,7 @@
 
       <ul class="sidefooter-navmenu">
         <li>
-          <a class="sidemenu-item sidemenu-content" href="#">
+          <a class="sidemenu-item sidemenu-content">
             <img
               src="../../assets/SidebarIcon/support-icon.svg"
               alt="support-icon"
@@ -168,7 +194,7 @@
         </div>
       </div>
 
-      <button class="nostyle-btn logout-btn">
+      <button class="nostyle-btn logout-btn" routerLink="">
         <img src="../../assets/SidebarIcon/logout-icon.svg" alt="logout-icon" />
       </button>
     </div>

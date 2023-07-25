@@ -30,10 +30,11 @@
                 *ngIf="menuItem.submenuItems?.length"
               />
             </a>
-            <ul class="dropdown-container" *ngIf="menuItem.showDropdown">
+            <ul style="background-color: white; width: 100%; z-index: 10;" class="dropdown-container" *ngIf="menuItem.showDropdown">
               <li
                 class="dropdown-menu"
                 *ngFor="let subMenuItem of menuItem.submenuItems"
+                
               >
                 <a
                   class="anchor-tag dropdown-item"

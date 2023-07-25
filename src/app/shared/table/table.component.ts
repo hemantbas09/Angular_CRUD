@@ -1,44 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { UserProfileService } from 'src/app/services/user-profile.service';
 import { SearchFilterService } from 'src/app/services/searchFilter/search-filter.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Observable, Subject } from 'rxjs';
-import {
-  debounceTime,
-  distinctUntilChanged,
-  switchMap,
-  catchError,
-} from 'rxjs/operators';
-
+import { PaginationService } from 'src/app/services/pagination/pagination.service';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
 })
 export class TableComponent implements OnInit {
+  totalUser!: number;
   existingProfileData: any[] = [];
-  searchForm: FormGroup;
-  private searchTextChanged = new Subject<string>();
+  searchTerm: string = '';
 
   constructor(
-    private formBuilder: FormBuilder,
     private userProfileService: UserProfileService,
-    private searchFilterService: SearchFilterService
-  ) {
-    this.searchForm = this.formBuilder.group({
-      searchText: [''],
-    });
-  }
+    private searchFilterService: SearchFilterService,
+    private paginationService: PaginationService
+  ) {}
 
   ngOnInit(): void {
     this.getUserProfile();
-    this.setupSearchObservable();
   }
 
   private getUserProfile() {
     this.userProfileService.getUserProfile().subscribe(
       (res) => {
         this.existingProfileData = res;
+        this.totalUser = this.existingProfileData.length;
+        this.userProfileService.setTotalUser(this.totalUser);
       },
       (err) => {
         console.error('Error fetching user profiles:', err);
@@ -56,42 +45,34 @@ export class TableComponent implements OnInit {
         console.error('Failed to delete user profile:', err);
       }
     );
+    this.totalUser = this.existingProfileData.length;
   }
 
   editProfile(userData: any) {
     console.log('Selected Data:', userData);
   }
 
-  private setupSearchObservable() {
-    this.searchForm
-      .get('searchText')
-      ?.valueChanges.pipe(
-        debounceTime(300), // Add a debounce to prevent frequent API calls while typing
-        distinctUntilChanged() // Only trigger search if the value has changed
-      )
-      .subscribe((searchText: string) => {
-        this.searchTextChanged.next(searchText);
-      });
-
-    this.searchTextChanged
-      .pipe(
-        switchMap((searchText: string) => this.searchUser(searchText)),
-        catchError((error) => {
-          console.error('Error searching for user profiles:', error);
-          return [];
-        })
-      )
-      .subscribe((response) => {
-        this.existingProfileData = response;
-      });
+  get paginatedUsers(): any[] {
+    return this.paginationService.paginateItems(
+      this.existingProfileData,
+      this.paginationService.getCurrentPage(),
+      this.searchTerm
+    );
   }
 
-  // Change 'searchUser()' to public
-  public searchUser(searchText: string): Observable<any[]> {
-    if (!searchText || searchText.trim().length === 0) {
-      return this.userProfileService.getUserProfile();
-    } else {
-      return this.searchFilterService.searchUser(searchText);
-    }
+  getCurrentPage(): number {
+    return this.paginationService.getCurrentPage();
+  }
+
+  getTotalPages(): number {
+    return this.paginationService.getTotalPages(this.existingProfileData);
+  }
+
+  setPage(pageNumber: number) {
+    this.paginationService.setCurrentPage(pageNumber);
+  }
+
+  onSearch() {
+    this.setPage(1);
   }
 }
